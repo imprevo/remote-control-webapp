@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "DEBUG=remote-control* node ./src",
+    "start": "DEBUG=remote-control* nodemon -e js,json,hbs ./src",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
     "lint": "eslint . --cache --fix"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
@@ -21,6 +22,7 @@
     "eslint-plugin-import": "^2.22.0",
     "husky": "^4.3.0",
     "lint-staged": "^10.3.0",
+    "nodemon": "^2.0.4",
     "prettier": "^2.1.1"
   },
   "husky": {
