@@ -13,6 +13,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-console": "error",
     "no-var": "error",
     "prefer-const": "error",
     "import/newline-after-import": "error",

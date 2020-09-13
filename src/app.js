@@ -1,9 +1,11 @@
 const path = require('path');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const createError = require('http-errors');
 const logger = require('morgan');
 const commandsRouter = require('./routes/commands');
+const controlsRouter = require('./routes/controls');
 const indexRouter = require('./routes/index');
 
 const app = express();
@@ -17,9 +19,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use('/', indexRouter);
 app.use('/commands', commandsRouter);
+app.use('/controls', controlsRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
