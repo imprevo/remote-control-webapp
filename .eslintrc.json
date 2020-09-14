@@ -18,6 +18,7 @@
     "prefer-const": "error",
     "prefer-template": "error",
     "import/newline-after-import": "error",
+    "import/no-extraneous-dependencies": "error",
     "import/no-unresolved": ["error", { "commonjs": true }],
     "import/order": [
       "error",
