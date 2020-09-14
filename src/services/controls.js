@@ -1,6 +1,6 @@
 const robot = require('robotjs');
 
-const supportedKeys = {
+const keyboardEvents = {
   mediaStop: () => robot.keyTap('audio_stop'),
   mediaPlay: () => robot.keyTap('audio_play'),
   mediaPause: () => robot.keyTap('audio_pause'),
@@ -25,9 +25,24 @@ const supportedKeys = {
   osAltF4: () => robot.keyTap('f4', 'alt'),
 };
 
-exports.keyTap = (key) => {
-  if (!(key in supportedKeys)) {
+exports.keyboardAction = (key) => {
+  if (!(key in keyboardEvents)) {
     throw new Error('Operation not available');
   }
-  supportedKeys[key]();
+  keyboardEvents[key]();
+};
+
+const mouseEvents = {
+  mouseClickLeft: () => robot.mouseClick('left'),
+  mouseMove: ({ x, y }) => {
+    const mouse = robot.getMousePos();
+    robot.moveMouse(mouse.x + x, mouse.y + y);
+  },
+};
+
+exports.mouseAction = (key, input) => {
+  if (!(key in mouseEvents)) {
+    throw new Error('Operation not available');
+  }
+  mouseEvents[key](input);
 };
