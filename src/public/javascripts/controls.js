@@ -20,7 +20,7 @@ const initKeyboard = () => {
 };
 
 const initMouse = () => {
-  const MOUSE_THRESHOLD = 10;
+  const MOUSE_THRESHOLD = 5;
   const MOUSE_SPEED = 2;
   const sendMouse = (params) => sendRequest('/commands/mouse', params);
   const mousePanel = document.querySelector('.mouse-panel');
@@ -61,6 +61,7 @@ const initMouse = () => {
       const deltaY = touch.clientY - lastClientY;
 
       if (
+        wasMoved ||
         Math.abs(deltaX) > MOUSE_THRESHOLD ||
         Math.abs(deltaY) > MOUSE_THRESHOLD
       ) {
