@@ -14,6 +14,15 @@ const supportedKeys = {
   vlcSubtitleNext: () => robot.keyTap('v'),
   vlcAudioNext: () => robot.keyTap('b'),
   vlcFullscreen: () => robot.keyTap('f'),
+
+  osUp: () => robot.keyTap('up'),
+  osDown: () => robot.keyTap('down'),
+  osLeft: () => robot.keyTap('left'),
+  osRight: () => robot.keyTap('right'),
+  osEnter: () => robot.keyTap('enter'),
+  osEscape: () => robot.keyTap('escape'),
+  osCommand: () => robot.keyTap('command'),
+  osAltF4: () => robot.keyTap('f4', 'alt'),
 };
 
 exports.keyTap = (key) => {
