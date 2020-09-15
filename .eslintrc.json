@@ -5,6 +5,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:node/recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
@@ -16,6 +17,7 @@
     "no-console": "error",
     "no-var": "error",
     "no-use-before-define": "error",
+    "object-shorthand": "error",
     "prefer-const": "error",
     "prefer-template": "error",
     "import/newline-after-import": "error",
@@ -27,6 +29,8 @@
         "alphabetize": { "order": "asc" },
         "newlines-between": "never"
       }
-    ]
+    ],
+    "node/global-require": "error",
+    "node/no-deprecated-api": "error"
   }
 }

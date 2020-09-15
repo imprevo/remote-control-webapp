@@ -44,4 +44,32 @@
     }
 </style>
 
+<h2>Files</h2>
+<div class="files-panel-wrapper">
+    <button class="files-button-back">Back</button>
+    <button class="files-button-home">Home</button>
+    <button class="files-button-refresh">Refresh</button>
+    <div class="files-panel"></div>
+</div>
+
+<style>
+    .files-panel {
+        max-width: 500px;
+    }
+
+    .files-item {
+        padding: 10px;
+        border: 1px solid #000;
+        word-break: break-all;
+    }
+
+    .files-item:before {
+        content: '📄 ';
+    }
+
+    .files-item.isDir:before {
+        content: '📁 ';
+    }
+</style>
+
 <script src="/javascripts/controls.js"></script>
