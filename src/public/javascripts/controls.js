@@ -119,6 +119,14 @@ const initFiles = () => {
   const showFiles = async (dirPath) => {
     const { data } = await getFiles(dirPath);
     const filesPanel = createFilesPanel();
+    let openedFile = null;
+    const setActive = (node) => {
+      if (openedFile) {
+        openedFile.classList.remove('active');
+      }
+      node.classList.add('active');
+      openedFile = node;
+    };
     data.files.forEach((file) => {
       const fileNode = createFileNode(file);
       fileNode.addEventListener('click', () => {
@@ -127,6 +135,7 @@ const initFiles = () => {
           showFiles(file.filePath);
         } else {
           openFile(file.filePath);
+          setActive(fileNode);
         }
       });
       filesPanel.appendChild(fileNode);
