@@ -2,6 +2,23 @@
   "name": "remote-control-webapp",
   "version": "0.0.0",
   "private": true,
+  "description": "Remote desktop web app built with RobotJS",
+  "keywords": [
+    "nodejs",
+    "remote",
+    "desktop",
+    "webapp",
+    "robotjs",
+    "keyboard",
+    "mouse",
+    "autohotkey"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imprevo/remote-control-webapp"
+  },
+  "author": "imprevo",
+  "license": "MIT",
   "scripts": {
     "start": "DEBUG=remote-control* nodemon -e js,json,hbs ./src",
     "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
