@@ -10,6 +10,7 @@
 - Remote control via LAN and WI-FI
 - File manager
 - Mouse control
+- Keyboard buttons
 - Media buttons
 - [VLC](https://www.videolan.org/vlc/) hotkeys
 

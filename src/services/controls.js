@@ -1,5 +1,7 @@
 const robot = require('robotjs');
 
+const keyboardKeysRegExp = /^([a-zA-Z0-9])$/;
+
 const keyboardEvents = {
   mediaStop: () => robot.keyTap('audio_stop'),
   mediaPlay: () => robot.keyTap('audio_play'),
@@ -20,16 +22,22 @@ const keyboardEvents = {
   osLeft: () => robot.keyTap('left'),
   osRight: () => robot.keyTap('right'),
   osEnter: () => robot.keyTap('enter'),
+  osBackspace: () => robot.keyTap('backspace'),
   osEscape: () => robot.keyTap('escape'),
+  osSpace: () => robot.keyTap('space'),
   osCommand: () => robot.keyTap('command'),
   osAltF4: () => robot.keyTap('f4', 'alt'),
 };
 
 exports.keyboardAction = (key) => {
-  if (!(key in keyboardEvents)) {
-    throw new Error('Operation not available');
+  if (keyboardKeysRegExp.test(key)) {
+    robot.keyTap(key);
+  } else {
+    if (!(key in keyboardEvents)) {
+      throw new Error('Operation not available');
+    }
+    keyboardEvents[key]();
   }
-  keyboardEvents[key]();
 };
 
 const mouseEvents = {

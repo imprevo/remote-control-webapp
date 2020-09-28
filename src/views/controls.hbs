@@ -1,79 +1,166 @@
 <h1>{{ title }}</h1>
 
-<h2>OS</h2>
-<button class="button-media" data-key="osUp">Up</button>
-<button class="button-media" data-key="osDown">Down</button>
-<button class="button-media" data-key="osLeft">Left</button>
-<button class="button-media" data-key="osRight">Right</button>
-<button class="button-media" data-key="osEnter">Enter</button>
-<button class="button-media" data-key="osEscape">Escape</button>
-<button class="button-media" data-key="osCommand">Command</button>
-<button class="button-media" data-key="osAltF4" disabled>Alt+F4</button>
-
-<h2>Media</h2>
-<button class="button-media" data-key="mediaStop">Stop</button>
-<button class="button-media" data-key="mediaPlay">Play</button>
-<button class="button-media" data-key="mediaPause">Pause</button>
-<button class="button-media" data-key="mediaNext">Next</button>
-<button class="button-media" data-key="mediaPrev">Prev</button>
-
-<h2>VLC</h2>
-<button class="button-media" data-key="vlcBackwardsShort">Backwards short jump</button>
-<button class="button-media" data-key="vlcForwardShort">Forward short jump</button>
-<button class="button-media" data-key="vlcBackwardsMedium">Backwards medium jump</button>
-<button class="button-media" data-key="vlcForwardMedium">Forward medium jump</button>
-<button class="button-media" data-key="vlcSubtitleNext">Change subtitle</button>
-<button class="button-media" data-key="vlcAudioNext">Change audiotrack</button>
-<button class="button-media" data-key="vlcFullscreen">Toggle fullscreen</button>
-
-<h2>Mouse</h2>
-<div class="mouse-panel-wrapper">
-    <div class="mouse-panel"></div>
-</div>
-
 <style>
-    .mouse-panel-wrapper {
+    .controls {
         width: 500px;
         max-width: 100%;
     }
-
-    .mouse-panel {
-        width: 100%;
-        padding-bottom: 100%;
-        border: 1px solid #000;
-    }
 </style>
 
-<h2>Files</h2>
-<div class="files-panel-wrapper">
-    <button class="files-button-back">Back</button>
-    <button class="files-button-home">Home</button>
-    <button class="files-button-refresh">Refresh</button>
-    <div class="files-panel"></div>
+<div class="controls">
+    <style>
+        .keyboard-button {
+            font-size: 1.3em;
+        }
+
+        .keyboard-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .keyboard-row .keyboard-button {
+            flex: auto;
+        }
+
+        .keyboard-arrows {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+    <h2>Keyboard</h2>
+    <div class="keyboard-row">
+        <button class="keyboard-button" data-key="1">1</button>
+        <button class="keyboard-button" data-key="2">2</button>
+        <button class="keyboard-button" data-key="3">3</button>
+        <button class="keyboard-button" data-key="4">4</button>
+        <button class="keyboard-button" data-key="5">5</button>
+        <button class="keyboard-button" data-key="6">6</button>
+        <button class="keyboard-button" data-key="7">7</button>
+        <button class="keyboard-button" data-key="8">8</button>
+        <button class="keyboard-button" data-key="9">9</button>
+        <button class="keyboard-button" data-key="0">0</button>
+    </div>
+    <div class="keyboard-row">
+        <button class="keyboard-button" data-key="q">q</button>
+        <button class="keyboard-button" data-key="w">w</button>
+        <button class="keyboard-button" data-key="e">e</button>
+        <button class="keyboard-button" data-key="r">r</button>
+        <button class="keyboard-button" data-key="t">t</button>
+        <button class="keyboard-button" data-key="y">y</button>
+        <button class="keyboard-button" data-key="u">u</button>
+        <button class="keyboard-button" data-key="i">i</button>
+        <button class="keyboard-button" data-key="o">o</button>
+        <button class="keyboard-button" data-key="p">p</button>
+    </div>
+    <div class="keyboard-row">
+        <button class="keyboard-button" data-key="a">a</button>
+        <button class="keyboard-button" data-key="s">s</button>
+        <button class="keyboard-button" data-key="d">d</button>
+        <button class="keyboard-button" data-key="f">f</button>
+        <button class="keyboard-button" data-key="g">g</button>
+        <button class="keyboard-button" data-key="h">h</button>
+        <button class="keyboard-button" data-key="j">j</button>
+        <button class="keyboard-button" data-key="k">k</button>
+        <button class="keyboard-button" data-key="l">l</button>
+    </div>
+    <div class="keyboard-row">
+        <button class="keyboard-button" data-key="z">z</button>
+        <button class="keyboard-button" data-key="x">x</button>
+        <button class="keyboard-button" data-key="c">c</button>
+        <button class="keyboard-button" data-key="v">v</button>
+        <button class="keyboard-button" data-key="b">b</button>
+        <button class="keyboard-button" data-key="n">n</button>
+        <button class="keyboard-button" data-key="m">m</button>
+    </div>
+    <div>
+        <button class="keyboard-button" data-key="osEscape">Esc</button>
+        <button class="keyboard-button" data-key="osAltF4" disabled>Alt+F4</button>
+        <button class="keyboard-button" data-key="osBackspace">← Backspace</button>
+    </div>
+    <div>
+        <button class="keyboard-button" data-key="osCommand">⊞ / ⌘</button>
+        <button class="keyboard-button" data-key="osSpace">Space</button>
+        <button class="keyboard-button" data-key="osEnter">↵ Enter</button>
+    </div>
+    <div class="keyboard-row">
+        <div class="keyboard-arrows">
+            <div class="keyboard-row">
+                <button class="keyboard-button" data-key="osUp">↑</button>
+            </div>
+            <div class="keyboard-row">
+                <button class="keyboard-button" data-key="osLeft">←</button>
+                <button class="keyboard-button" data-key="osDown">↓</button>
+                <button class="keyboard-button" data-key="osRight">→</button>
+            </div>
+        </div>
+    </div>
+
+    <h2>Media</h2>
+    <button class="keyboard-button" data-key="mediaStop">Stop</button>
+    <button class="keyboard-button" data-key="mediaPlay">Play</button>
+    <button class="keyboard-button" data-key="mediaPause">Pause</button>
+    <button class="keyboard-button" data-key="mediaNext">Next</button>
+    <button class="keyboard-button" data-key="mediaPrev">Prev</button>
+
+    <h2>VLC</h2>
+    <button class="keyboard-button" data-key="vlcBackwardsShort">Backwards short jump</button>
+    <button class="keyboard-button" data-key="vlcForwardShort">Forward short jump</button>
+    <button class="keyboard-button" data-key="vlcBackwardsMedium">Backwards medium jump</button>
+    <button class="keyboard-button" data-key="vlcForwardMedium">Forward medium jump</button>
+    <button class="keyboard-button" data-key="vlcSubtitleNext">Change subtitle</button>
+    <button class="keyboard-button" data-key="vlcAudioNext">Change audiotrack</button>
+    <button class="keyboard-button" data-key="vlcFullscreen">Toggle fullscreen</button>
+
+    <h2>Mouse</h2>
+    <div class="mouse-panel-wrapper">
+        <div class="mouse-panel"></div>
+    </div>
+
+    <style>
+        .mouse-panel-wrapper {
+            width: 500px;
+            max-width: 100%;
+        }
+
+        .mouse-panel {
+            width: 100%;
+            padding-bottom: 100%;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <h2>Files</h2>
+    <div class="files-panel-wrapper">
+        <button class="files-button-back">Back</button>
+        <button class="files-button-home">Home</button>
+        <button class="files-button-refresh">Refresh</button>
+        <div class="files-panel"></div>
+    </div>
+
+    <style>
+        .files-panel {
+            max-width: 500px;
+        }
+
+        .files-item {
+            padding: 10px;
+            border: 1px solid #000;
+            word-break: break-all;
+        }
+
+        .files-item.active {
+            background: #9e9e9e;
+        }
+
+        .files-item:before {
+            content: '📄 ';
+        }
+
+        .files-item.isDir:before {
+            content: '📁 ';
+        }
+    </style>
 </div>
-
-<style>
-    .files-panel {
-        max-width: 500px;
-    }
-
-    .files-item {
-        padding: 10px;
-        border: 1px solid #000;
-        word-break: break-all;
-    }
-
-    .files-item.active {
-        background: #9e9e9e;
-    }
-
-    .files-item:before {
-        content: '📄 ';
-    }
-
-    .files-item.isDir:before {
-        content: '📁 ';
-    }
-</style>
 
 <script src="/javascripts/controls.js"></script>

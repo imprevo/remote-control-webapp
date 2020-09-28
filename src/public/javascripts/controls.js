@@ -14,9 +14,9 @@ const sendPostRequest = (url, params) =>
 
 const initKeyboard = () => {
   const sendKeboard = (params) => sendPostRequest('/commands/keyboard', params);
-  const mediaButtons = document.querySelectorAll('.button-media');
+  const keyboardButtons = document.querySelectorAll('.keyboard-button');
 
-  mediaButtons.forEach((button) => {
+  keyboardButtons.forEach((button) => {
     button.addEventListener('click', () => {
       const { key } = button.dataset;
       sendKeboard({ key });
