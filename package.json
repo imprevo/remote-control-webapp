@@ -20,8 +20,9 @@
   "author": "imprevo",
   "license": "MIT",
   "scripts": {
-    "start": "DEBUG=remote-control* nodemon -e js,json,hbs ./src",
-    "format": "prettier --loglevel warn --write \"**/*.{js,css,md}\"",
+    "dev": "NODE_ENV=development DEBUG=remote-control* nodemon -e js,json,hbs ./src",
+    "start": "NODE_ENV=production node ./src",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md,json}\"",
     "lint": "eslint . --cache --fix"
   },
   "dependencies": {
