@@ -18,15 +18,9 @@
 
 1. Clone this repository.
 
-2. Use Node 12.
+2. You need to install [RobotsJS requirements](https://github.com/octalmage/robotjs#building) for your OS.
 
-```sh
-nvm use 12
-```
-
-3. You need to install [RobotsJS requirements](https://github.com/octalmage/robotjs#building) for your OS.
-
-4. Install dependencies
+3. Install dependencies
 
 ```sh
 npm install
