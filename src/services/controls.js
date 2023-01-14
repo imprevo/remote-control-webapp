@@ -26,6 +26,8 @@ const keyboardEvents = {
   osEscape: () => robot.keyTap('escape'),
   osSpace: () => robot.keyTap('space'),
   osCommand: () => robot.keyTap('command'),
+  osControl: () => robot.keyTap('control'),
+  osShift: () => robot.keyTap('shift'),
   osAltF4: () => robot.keyTap('f4', 'alt'),
 };
 
