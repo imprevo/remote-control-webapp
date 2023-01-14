@@ -8,6 +8,9 @@ const keyboardEvents = {
   mediaPause: () => robot.keyTap('audio_pause'),
   mediaNext: () => robot.keyTap('audio_next'),
   mediaPrev: () => robot.keyTap('audio_prev'),
+  mediaVolumeUp: () => robot.keyTap('audio_vol_up'),
+  mediaVolumeDown: () => robot.keyTap('audio_vol_down'),
+  mediaVolumeMute: () => robot.keyTap('audio_mute'),
 
   vlcBackwardsShort: () => robot.keyTap('left', 'alt'),
   vlcForwardShort: () => robot.keyTap('right', 'alt'),
