@@ -115,11 +115,16 @@
     <button class="keyboard-button" data-key="vlcFullscreen">Toggle fullscreen</button>
 
     <h2>Mouse</h2>
+    <input class="mouse-speed" type="range" min="1" max="10" step="1">
     <div class="mouse-panel-wrapper">
         <div class="mouse-panel"></div>
     </div>
 
     <style>
+        .mouse-speed {
+          width: 100%;
+        }
+
         .mouse-panel-wrapper {
             width: 500px;
             max-width: 100%;

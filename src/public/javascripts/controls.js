@@ -26,12 +26,19 @@ const initKeyboard = () => {
 
 const initMouse = () => {
   const MOUSE_THRESHOLD = 5;
-  const MOUSE_SPEED = 2;
   const sendMouse = (params) => sendPostRequest('/commands/mouse', params);
   const mousePanel = document.querySelector('.mouse-panel');
+  const mouseSpeedInput = document.querySelector('.mouse-speed');
+  let mouseSpeed = +localStorage.getItem('mouseSpeed') || 2;
   let lastClientX = 0;
   let lastClientY = 0;
   let wasMoved = false;
+
+  mouseSpeedInput.value = mouseSpeed;
+  mouseSpeedInput.addEventListener('change', (e) => {
+    mouseSpeed = e.target.value;
+    localStorage.setItem('mouseSpeed', mouseSpeed);
+  });
 
   mousePanel.addEventListener('touchstart', (e) => {
     e.preventDefault();
@@ -70,8 +77,8 @@ const initMouse = () => {
         Math.abs(deltaX) > MOUSE_THRESHOLD ||
         Math.abs(deltaY) > MOUSE_THRESHOLD
       ) {
-        const x = deltaX * MOUSE_SPEED;
-        const y = deltaY * MOUSE_SPEED;
+        const x = deltaX * mouseSpeed;
+        const y = deltaY * mouseSpeed;
 
         wasMoved = true;
         lastClientX = touch.clientX;
