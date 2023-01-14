@@ -1,4 +1,13 @@
 {
   "singleQuote": true,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.hbs",
+      "options": {
+        "parser": "html",
+        "singleQuote": false
+      }
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "remote-control-webapp",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "description": "Remote desktop web app built with RobotJS",
   "keywords": [
@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "NODE_ENV=development DEBUG=remote-control* nodemon -e js,json,hbs ./src",
     "start": "NODE_ENV=production node ./src",
-    "format": "prettier --loglevel warn --write \"**/*.{js,css,md,json}\"",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md,json,hbs}\"",
     "lint": "eslint . --cache --fix"
   },
   "dependencies": {
@@ -46,7 +46,7 @@
     "husky": "^4.3.0",
     "lint-staged": "^10.4.0",
     "nodemon": "^2.0.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.8.3"
   },
   "husky": {
     "hooks": {
@@ -54,7 +54,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,json}": "prettier --write",
+    "*.{js,css,md,json,hbs}": "prettier --write",
     "*.js": "eslint --cache --fix"
   }
 }
