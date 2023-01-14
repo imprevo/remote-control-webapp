@@ -28,11 +28,29 @@ npm install
 
 ## Usage
 
+Run application in production mode:
+
 ```sh
 npm start
 ```
 
+Or in development mode:
+
+```sh
+npm run dev
+```
+
 Now you can open http://localhost:3000 to view it in the browser.
+
+## Troubleshooting
+
+### `node-gyp` throws error during installation
+
+Clone [RobotsJS repo](https://github.com/octalmage/robotjs) and run this command inside `robotjs` root catalog:
+
+```sh
+npm install && node-gyp rebuild
+```
 
 ## Author
 
