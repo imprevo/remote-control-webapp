@@ -44,6 +44,7 @@ exports.keyboardAction = (key) => {
 
 const mouseEvents = {
   mouseClickLeft: () => robot.mouseClick('left'),
+  mouseClickRight: () => robot.mouseClick('right'),
   mouseMove: ({ x, y }) => {
     const mouse = robot.getMousePos();
     robot.moveMouse(mouse.x + x, mouse.y + y);

@@ -144,9 +144,16 @@
 
 <div class="tab" data-tab="mouse">
     <h2>Mouse</h2>
-    <input class="mouse-speed" type="range" min="1" max="10" step="1">
+    <label>
+      Mouse speed
+      <input class="mouse-speed" type="range" min="1" max="10" step="1">
+    </label>
     <div class="mouse-panel-wrapper">
         <div class="mouse-panel"></div>
+    </div>
+    <div class="mouse-buttons">
+      <button class="mouse-button" data-key="mouseClickLeft">left</button>
+      <button class="mouse-button" data-key="mouseClickRight">right</button>
     </div>
 
     <style>
@@ -161,8 +168,17 @@
 
         .mouse-panel {
             width: 100%;
-            padding-bottom: 100%;
+            padding-bottom: 80%;
             border: 1px solid #000;
+        }
+
+        .mouse-buttons {
+            display: flex;
+            flex-direction: row;
+        }
+        .mouse-button {
+            font-size: 1.3em;
+            width: 50%;
         }
     </style>
 </div>

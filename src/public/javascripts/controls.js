@@ -29,6 +29,7 @@ const initMouse = () => {
   const sendMouse = (params) => sendPostRequest('/commands/mouse', params);
   const mousePanel = document.querySelector('.mouse-panel');
   const mouseSpeedInput = document.querySelector('.mouse-speed');
+  const mouseButtons = document.querySelectorAll('.mouse-button');
   let mouseSpeed = +localStorage.getItem('mouseSpeed') || 2;
   let lastClientX = 0;
   let lastClientY = 0;
@@ -87,6 +88,13 @@ const initMouse = () => {
         sendMouse({ key: 'mouseMove', input: { x, y } });
       }
     }
+  });
+
+  mouseButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const { key } = button.dataset;
+      sendMouse({ key });
+    });
   });
 };
 
