@@ -1,14 +1,41 @@
 <h1>{{ title }}</h1>
 
 <style>
-    .controls {
+    .tabs {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: #fff;
+        padding: 8px 0;
+    }
+    
+    .tab-nav {
+        font-size: 1.3em;
+    }
+
+    .tab-nav.active {
+        font-weight: bold;
+    }
+    
+    .tab {
         width: 500px;
         max-width: 100%;
+        display: none;
+    }
+    
+    .tab.active {
+        display: block;
     }
 </style>
 
-<div class="controls">
-    <style>
+<div class="tabs">
+  <button class="tab-nav" data-tab="keyboard">Keyboard</button>
+  <button class="tab-nav" data-tab="mouse">Mouse</button>
+  <button class="tab-nav" data-tab="files">Files</button>
+</div>
+
+<div class="tab" data-tab="keyboard">
+  <style>
         .keyboard-button {
             font-size: 1.3em;
         }
@@ -113,7 +140,9 @@
     <button class="keyboard-button" data-key="vlcSubtitleNext">Change subtitle</button>
     <button class="keyboard-button" data-key="vlcAudioNext">Change audiotrack</button>
     <button class="keyboard-button" data-key="vlcFullscreen">Toggle fullscreen</button>
+</div>
 
+<div class="tab" data-tab="mouse">
     <h2>Mouse</h2>
     <input class="mouse-speed" type="range" min="1" max="10" step="1">
     <div class="mouse-panel-wrapper">
@@ -122,7 +151,7 @@
 
     <style>
         .mouse-speed {
-          width: 100%;
+            width: 100%;
         }
 
         .mouse-panel-wrapper {
@@ -136,7 +165,9 @@
             border: 1px solid #000;
         }
     </style>
+</div>
 
+<div class="tab" data-tab="files">
     <h2>Files</h2>
     <div class="files-panel-wrapper">
         <button class="files-button-back">Back</button>
@@ -170,4 +201,5 @@
     </style>
 </div>
 
+<script src="/javascripts/tabs.js"></script>
 <script src="/javascripts/controls.js"></script>
